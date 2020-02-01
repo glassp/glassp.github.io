@@ -7,7 +7,7 @@ $.ajax({
       var url = result[i].html_url;
       var desc = result[i].description;
       var isFork = result[i].fork;
-      if(!isFork&&repo!=="examples")
+      if(!isFork&&name!=="examples")
         $("#projects").append(`
           <div class="card">
             <img class="card-img-top" src="placeholder.jpg" alt="Card image cap">
