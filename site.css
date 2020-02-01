@@ -7,7 +7,7 @@ html, body{
   color: white;
 }
 
-#intro-animation{
+#intro-animation, .text-pink{
   color: #FF0066;
 }
 .avatar{
