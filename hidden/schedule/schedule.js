@@ -16,12 +16,15 @@ var rawFile = new XMLHttpRequest();
 function render(filecontents){
 
 events = findAndSplit("<<<EVENT", "EVENT;",filecontents);
-console.log(events.length);
 for(var i in events){
   var lines = events[i].split(/\n/)
   var obj = {
+      "id": i,
       "name": "STRING",
-      "vehicle": "-",
+      "vehicle": {
+        "name": "-",
+        "icon": ""
+      },
       "unix": {
         "from": "unix",
         "to": "unix",
@@ -48,18 +51,27 @@ for(var i in events){
       case "toDate": obj.to.date=keyValuePair[1];break;
       case "toTime": obj.to.time=keyValuePair[2]===null?keyValuePair[1]+":00":keyValuePair[1]+":"+keyValuePair[2];break;
       case "toPlace": obj.to.place=keyValuePair[1];break;
-      case "vehicle": obj.vehicle=keyValuePair[1];break;
+      case "vehicle": obj.vehicle.name=keyValuePair[1];break;
     }
   }
+  obj.vehicle.icon=findAndSplit("[","]",obj.vehicle.name)[0];
+  obj.vehicle.name=obj.vehicle.name.replace(/\[.*\]/,"");
   //seconds of 14 days
   var dateOffset = 14*24*60*60;
+  //set $obj.unix.from to $obj.from.date - 2 weeks
   obj.unix.from = convertToUnix(obj.from.date, obj.from.time)-dateOffset;
   obj.unix.to = convertToUnix(obj.to.date,obj.to.time);
-  //set $obj.unix.from to $obj.from.date - 2 weeks
-  console.log(obj);
+  var date = new Date();
+  var now = Math.round(date.getTime()/1000);
+  var from = new Date(obj.unix.from*1000);
+  var offset = new Date(dateOffset*1000);
+  
+  //from<=now<=to
+  if(obj.unix.from<=now&&now<=obj.unix.to)
+  
   $("#list").append(`
-   <div class="text-center">
-          <div class="row pt-4">
+   <div class="text-center rounded-pill border border-light py-1 my-4" id="${obj.id}">
+          <div class="row">
             <div class="col">
               <p class="mb-0">
                 <span class="invisible">invisible</span>
@@ -67,8 +79,8 @@ for(var i in events){
               <p class="mb-0">
                 <h5>${obj.name}</h5>
               </p>
-              <p class="mb-0">
-                Transfer with: ${obj.vehicle}
+              <p class="mb-0 pl-4">
+                Transfer with: <span id="vehicle" class="d-none pr-2"></span>${obj.vehicle.name}
               </p>
             </div>
             <div class="col">
@@ -106,6 +118,12 @@ for(var i in events){
             </div>
         </div>
       </div>`);
+      
+  if(obj.vehicle.icon!==undefined){
+    obj.vehicle.icon=obj.vehicle.icon.replace(/\[/,"");
+    $(`#${obj.id} #vehicle`).addClass(`fa fa-${obj.vehicle.icon}`);
+    $(`#${obj.id} #vehicle`).removeClass("d-none");
+  }
 }
 
 
@@ -134,14 +152,13 @@ function convertToUnix(dateStr,timeStr){
   var timeArr = timeStr.split(":");
   var now = new Date();
   
-  var year = dateArr[0]===null?now.getFullYear():dateArr[0];
+  var year = dateArr[2]===null?now.getFullYear():dateArr[2];
   var month = dateArr[1]===null?now.getMonth():dateArr[1]-1;
-  var day = dateArr[2]===null?now.getDate():dateArr[2];
+  var day = dateArr[0]===null?now.getDate():dateArr[0];
   var hour = timeArr[0]===null?now.getHours():timeArr[0];
   var minute = timeArr[1]===null?now.getMinutes():timeArr[1];
   
-  
-  var date = new Date(Date.UTC(year,month,day,hour,minute));
+  var date = new Date(`${year}`,month,day,hour,minute);
   return date.getTime()/1000;
 }
 
