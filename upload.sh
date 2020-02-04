@@ -1,10 +1,9 @@
 #!/bin/bash
 cd ./hidden/schedule
+rm master.sched
 touch master.sched
-echo "" > master.sched
 for f in *.schedule; do
-  content= $(cat $f)
-  echo "$content" >> master.sched;
+  echo "$(cat $f)" >> master.sched;
 done
 cd ../..
 git add .

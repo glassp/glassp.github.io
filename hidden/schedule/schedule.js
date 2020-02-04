@@ -15,7 +15,7 @@ var rawFile = new XMLHttpRequest();
 
 function render(filecontents){
 
-events = findAndSplit("<<<EVENT", "EVENT;",filecontents);
+events = findAndSplit("EVENT:", "EVENT;",filecontents);
 console.log(events.length);
 for(var i in events){
   var lines = events[i].split(/\n/)

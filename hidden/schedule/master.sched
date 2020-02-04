@@ -1,3 +1,26 @@
+<<<EVENT
+name: <STRING> <EOL>
+
+fromDate: <STRING> <EOL>
+fromPlace: <STRING> <EOL>
+fromTime: <STRING> <EOL>
 
 
+toDate: <STRING> <EOL>
+toPlace: <STRING> <EOL>
+toTime: <STRING> <EOL>
 
+EVENT;
+<<<EVENT
+name: <STRING> <EOL>
+
+fromDate: <STRING> <EOL>
+fromPlace: <STRING> <EOL>
+fromTime: <STRING> <EOL>
+
+
+toDate: <STRING> <EOL>
+toPlace: <STRING> <EOL>
+toTime: <STRING> <EOL>
+
+EVENT;
