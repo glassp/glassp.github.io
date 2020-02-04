@@ -70,7 +70,7 @@ for(var i in events){
   if(obj.unix.from<=now&&now<=obj.unix.to)
   
   $("#list").append(`
-   <div class="text-center rounded-pill border border-light py-1 my-4" id="${obj.id}">
+   <div class="text-center rounded-lg border border-light py-1 my-4" id="${obj.id}">
           <div class="row">
             <div class="col">
               <p class="mb-0">
@@ -83,6 +83,7 @@ for(var i in events){
                 Transfer with: <span id="vehicle" class="d-none pr-2"></span>${obj.vehicle.name}
               </p>
             </div>
+            <div class="w-100 d-block d-md-none mx-2 border-top"></div>
             <div class="col">
               <p class="mb-0">
                 ${obj.from.date}
@@ -94,6 +95,7 @@ for(var i in events){
                 ${obj.to.date}
               </p>
             </div>
+            <div class="w-100 d-block d-lg-none mx-3 border-top"></div>
             <div class="col">
               <p class="mb-0">
                 ${obj.from.time}
@@ -105,6 +107,7 @@ for(var i in events){
                 ${obj.to.time}
               </p>
             </div>
+            <div class="w-100 d-block d-md-none mx-2 border-top"></div>
             <div class="col">
               <p class="mb-0">
                 ${obj.from.place}
