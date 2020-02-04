@@ -21,19 +21,20 @@ for(var i in events){
   var lines = events[i].split(/\n/)
   var obj = {
       "name": "STRING",
-      "unixstamp": {
+      "vehicle": "-",
+      "unix": {
         "from": "unix",
         "to": "unix",
       },
       "from": {
-        "place": "STRING",
-        "date": "dd.mm.yyyy",
-        "time": "hh:mm"
+        "place": "",
+        "date": "01.01.2000",
+        "time": "00:00"
       },
       "to": {
-        "place": "STRING",
-        "date": "dd.mm.yyyy",
-        "time": "hh:mm"
+        "place": "",
+        "date": "31.12.2999",
+        "time": "23:59"
       }
     };
   for(var j in lines){
@@ -42,20 +43,34 @@ for(var i in events){
     switch(keyValuePair[0]){
       case "name": obj.name=keyValuePair[1];break;
       case "fromDate": obj.from.date=keyValuePair[1];break;
-      case "fromTime": obj.from.time=keyValuePair[1];break;
+      case "fromTime": obj.from.time=keyValuePair[2]===null?keyValuePair[1]+":00":keyValuePair[1]+":"+keyValuePair[2];break;
       case "fromPlace": obj.from.place=keyValuePair[1];break;
       case "toDate": obj.to.date=keyValuePair[1];break;
-      case "toTime": obj.to.time=keyValuePair[1];break;
+      case "toTime": obj.to.time=keyValuePair[2]===null?keyValuePair[1]+":00":keyValuePair[1]+":"+keyValuePair[2];break;
       case "toPlace": obj.to.place=keyValuePair[1];break;
+      case "vehicle": obj.vehicle=keyValuePair[1];break;
     }
   }
-  //TODO calculate unix timestamps of date.
+  //seconds of 14 days
+  var dateOffset = 14*24*60*60;
+  obj.unix.from = convertToUnix(obj.from.date, obj.from.time)-dateOffset;
+  obj.unix.to = convertToUnix(obj.to.date,obj.to.time);
   //set $obj.unix.from to $obj.from.date - 2 weeks
   console.log(obj);
   $("#list").append(`
    <div class="text-center">
-          <h4>${obj.name}</h4>
           <div class="row pt-4">
+            <div class="col">
+              <p class="mb-0">
+                <span class="invisible">invisible</span>
+              </p>
+              <p class="mb-0">
+                <h5>${obj.name}</h5>
+              </p>
+              <p class="mb-0">
+                Transfer with: ${obj.vehicle}
+              </p>
+            </div>
             <div class="col">
               <p class="mb-0">
                 ${obj.from.date}
@@ -113,5 +128,20 @@ function findAndSplit(start,end,str){
     array.push(str.substring(iStart,offset));
   }
   return array;
+}
+function convertToUnix(dateStr,timeStr){
+  var dateArr = dateStr.split(".");
+  var timeArr = timeStr.split(":");
+  var now = new Date();
+  
+  var year = dateArr[0]===null?now.getFullYear():dateArr[0];
+  var month = dateArr[1]===null?now.getMonth():dateArr[1]-1;
+  var day = dateArr[2]===null?now.getDate():dateArr[2];
+  var hour = timeArr[0]===null?now.getHours():timeArr[0];
+  var minute = timeArr[1]===null?now.getMinutes():timeArr[1];
+  
+  
+  var date = new Date(Date.UTC(year,month,day,hour,minute));
+  return date.getTime()/1000;
 }
 

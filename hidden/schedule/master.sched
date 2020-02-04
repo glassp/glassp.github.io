@@ -1,13 +1,172 @@
 <<<EVENT
-name: NAME
+name: Auto putzen
 
-fromDate: DD.MM.YYYY
-fromPlace: Here
-fromTime: HH:MM
+fromDate: 06.02.2020
+fromPlace: -
+fromTime: 14:00
+
+toDate: 06.02.2020
+toPlace: -
+toTime: 15:00
+EVENT;
 
 
-toDate: DD.MM.YYYY
-toPlace: there
-toTime: HH:MM
 
+
+
+<<<EVENT
+name: Fabi holen
+
+fromDate: 07.02.2020
+fromPlace: Fabi
+fromTime: 14:00
+
+toDate: 06.02.2020
+toPlace: Vaihingen BHF
+toTime: 18:00
+vehicle: Clio
+EVENT;
+
+
+
+
+<<<EVENT
+name: Lili holen
+
+fromDate: 07.02.2020
+fromPlace: Vaihingen BHF
+fromTime: 18:08
+
+toDate: 07.02.2020
+toPlace: Pasi
+toTime: 18:30
+vehicle: Clio
+EVENT;
+
+
+
+
+<<<EVENT
+name: Bahnhof Transfer
+
+fromDate: 08.02.2020
+fromPlace: Pasi
+fromTime: 09:30
+
+toDate: 08.02.2020
+toPlace: Vaihingen BHF
+toTime: 09:50
+
+vehicle: Clio
+EVENT;
+
+
+
+
+<<<EVENT
+name: Fly & Ride
+
+fromDate: 08.02.2020
+fromPlace: Vaihingen BHF
+fromTime: 10:06
+
+toDate: 08.02.2020
+toPlace: Stuttgart HBF
+toTime: 10:24
+vehicle: IC 2319 Stuttgart HBF
+EVENT;
+
+
+
+
+<<<EVENT
+name: VVS
+
+fromDate: 08.02.2020
+fromPlace: Stuttgart HBF
+fromTime: 10:45
+
+toDate: 06.02.2020
+toPlace: Stuttgart Flughafen (STR)
+toTime: 11:12
+vehicle: S3
+EVENT;
+
+
+
+
+<<<EVENT
+name: Flug
+
+fromDate: 08.02.2020
+fromPlace: STR
+fromTime: 13:10
+
+toDate: 06.02.2020
+toPlace: LPA
+toTime: 16:40 ::(lokal Zeit)
+vehicle: TuiFly
+EVENT;
+
+
+
+
+<<<EVENT
+name: Flug
+
+fromDate: 15.02.2020
+fromPlace: LPA
+fromTime: 17:45
+
+toDate: 15.02.2020
+toPlace: STR
+toTime: 23:00
+vehicle: TuiFly
+EVENT;
+
+
+
+
+<<<EVENT
+name: VVS
+
+fromDate: 16.02.2020
+fromPlace: Stuttgart Flughafen (STR)
+fromTime: 01:08
+
+toDate: 16.02.2020
+toPlace: Stuttgart HBF
+toTime: 01:35
+vehicle: S2
+EVENT;
+
+
+
+
+<<<EVENT
+name: VVS
+
+fromDate: 16.02.2020
+fromPlace: Stuttgart HBF
+fromTime: 02:07
+
+toDate: 16.02.2020
+toPlace: Vaihingen BHF
+toTime: 02:38
+vehicle: RB 17a Pforzheim HBF
+EVENT;
+
+
+
+
+<<<EVENT
+name: Bahnhof Transfer
+
+fromDate: 16.02.2020
+fromPlace: Vaihingen BHF
+fromTime: 02:38
+
+toDate: 16.02.2020
+toPlace: Pasi
+toTime: 03:00
 EVENT;
