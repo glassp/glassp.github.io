@@ -1,5 +1,5 @@
 var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "master.sched", false);
+    rawFile.open("GET", "master.sched");
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
