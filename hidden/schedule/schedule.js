@@ -68,7 +68,7 @@ for(var i in events){
   var weekday = [
     "MO", "DI", "MI", "DO", "FR", "SA", "SO"
     ]
-  
+  console.log(obj);
   //from<=now<=to
   if(obj.unix.from<=now&&now<=obj.unix.to)
   

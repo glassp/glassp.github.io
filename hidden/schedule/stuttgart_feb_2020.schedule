@@ -67,6 +67,7 @@ toTime: 11;00
 vehicle: [car] Clio
 EVENT;
 
+
 <<<EVENT
 name: Moni
 
@@ -97,6 +98,7 @@ toPlace: Oma
 toTime: 11;00
 vehicle: [car] Clio
 EVENT;
+
 
 <<<EVENT
 name: Oma
