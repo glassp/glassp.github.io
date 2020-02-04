@@ -80,7 +80,7 @@ for(var i in events){
                 <h5>${obj.name}</h5>
               </p>
               <p class="mb-0 pl-4">
-                Transfer with: <span id="vehicle" class="d-none pr-2"></span>${obj.vehicle.name}
+                Transfer with: <span id="vehicle" class="d-none pr-2 pr-sm-4 mx-sm-1"></span>${obj.vehicle.name}
               </p>
             </div>
             <div class="w-100 d-block d-md-none mx-2 border-top"></div>
