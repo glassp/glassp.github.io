@@ -63,7 +63,7 @@ fromTime: 08:30
 
 toDate: 18.02.2020
 toPlace: Moni
-toTime: 11;00
+toTime: 11:00
 vehicle: [car] Clio
 EVENT;
 
@@ -95,7 +95,7 @@ fromTime: 10:00
 
 toDate: 18.02.2020
 toPlace: Oma
-toTime: 11;00
+toTime: 11:00
 vehicle: [car] Clio
 EVENT;
 
