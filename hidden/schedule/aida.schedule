@@ -1,13 +1,13 @@
 <<<EVENT
-name: <STRING> <EOL>
+name: NAME
 
-fromDate: <STRING> <EOL>
-fromPlace: <STRING> <EOL>
-fromTime: <STRING> <EOL>
+fromDate: DD.MM.YYYY
+fromPlace: Here
+fromTime: HH:MM
 
 
-toDate: <STRING> <EOL>
-toPlace: <STRING> <EOL>
-toTime: <STRING> <EOL>
+toDate: DD.MM.YYYY
+toPlace: there
+toTime: HH:MM
 
 EVENT;
