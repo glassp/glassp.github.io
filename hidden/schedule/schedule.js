@@ -57,7 +57,7 @@ for(var i in events){
   obj.vehicle.icon=findAndSplit("[","]",obj.vehicle.name)[0];
   obj.vehicle.name=obj.vehicle.name.replace(/\[.*\]/,"");
   //seconds of 14 days
-  var dateOffset = 14*24*60*60;
+  var dateOffset = 21*24*60*60;
   //set $obj.unix.from to $obj.from.date - 2 weeks
   obj.unix.from = convertToUnix(obj.from.date, obj.from.time)-dateOffset;
   obj.unix.to = convertToUnix(obj.to.date,obj.to.time);
