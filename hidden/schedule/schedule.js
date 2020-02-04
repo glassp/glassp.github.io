@@ -63,8 +63,11 @@ for(var i in events){
   obj.unix.to = convertToUnix(obj.to.date,obj.to.time);
   var date = new Date();
   var now = Math.round(date.getTime()/1000);
-  var from = new Date(obj.unix.from*1000);
-  var offset = new Date(dateOffset*1000);
+  var from = convertToUnix(obj.from.date,obj.from.time);
+  var fromUnix = new Date(from*1000);
+  var weekday = [
+    "MO", "DI", "MI", "DO", "FR", "SA", "SO"
+    ]
   
   //from<=now<=to
   if(obj.unix.from<=now&&now<=obj.unix.to)
@@ -86,7 +89,7 @@ for(var i in events){
             <div class="w-100 d-block d-md-none mx-2 border-top"></div>
             <div class="col">
               <p class="mb-0">
-                ${obj.from.date}
+                ${weekday[fromUnix.getDay()]} ${obj.from.date}
               </p>
               <p class="mb-0">
                 <i class="fa fa-angle-double-down"></i>
