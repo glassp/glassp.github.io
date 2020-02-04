@@ -89,7 +89,7 @@ for(var i in events){
             <div class="w-100 d-block d-md-none mx-2 border-top"></div>
             <div class="col">
               <p class="mb-0">
-                ${weekday[fromUnix.getDay()]} ${obj.from.date}
+                ${weekday[fromUnix.getDay()-1]} ${obj.from.date}
               </p>
               <p class="mb-0">
                 <i class="fa fa-angle-double-down"></i>

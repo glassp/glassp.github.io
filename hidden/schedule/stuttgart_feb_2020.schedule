@@ -89,11 +89,11 @@ EVENT;
 <<<EVENT
 name: Oma
 
-fromDate: 18.02.2020
+fromDate: 19.02.2020
 fromPlace: Pasi
 fromTime: 10:00
 
-toDate: 18.02.2020
+toDate: 19.02.2020
 toPlace: Oma
 toTime: 11:00
 vehicle: [car] Clio
@@ -103,11 +103,11 @@ EVENT;
 <<<EVENT
 name: Oma
 
-fromDate: 18.02.2020
+fromDate: 19.02.2020
 fromPlace: Oma
 fromTime: 14:00
 
-toDate: 18.02.2020
+toDate: 19.02.2020
 toPlace: Pasi
 toTime: 15:00
 vehicle: [car] Clio
