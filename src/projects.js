@@ -41,7 +41,9 @@ $.ajax({
         //inject a html card with the repo info (exclude forked and examples repo)
         $("#projects").append(`
           <div class="card">
-            <img class="card-img-top" src="${repo.openGraphImageUrl}" alt="Card image cap">
+            <div class="embbed-responsive">
+              <img class="card-img-top" src="${repo.openGraphImageUrl}" alt="Card image cap">
+            </div>
             <div class="card-body">
               <h5 class="card-title">${repo.name}</h5>
               <p class="card-text">
