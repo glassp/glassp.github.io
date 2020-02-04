@@ -26,7 +26,7 @@ html, body{
 }
 .fa-heart, .fa-heart:link .fa-heart:hover {
   font-size: 3vh!important;
-  width: 2.5vw!important;
+  width: 3vw!important;
   min-width:24px!important;
   color: red!important;
 }
