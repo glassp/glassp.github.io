@@ -42,3 +42,6 @@ html, body{
   min-height:100px;
   min-width:100px;
 }
+.btn-social{
+  padding-right: 1vw;
+}
