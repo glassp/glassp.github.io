@@ -65,6 +65,7 @@ for(var i in events){
   var now = Math.round(date.getTime()/1000);
   var from = convertToUnix(obj.from.date,obj.from.time);
   var fromUnix = new Date(from*1000);
+  var toUnix = new Date(obj.unix.to*1000);
   var weekday = [
     "MO", "DI", "MI", "DO", "FR", "SA", "SO"
     ]
@@ -95,7 +96,7 @@ for(var i in events){
                 <i class="fa fa-angle-double-down"></i>
               </p>
               <p class="mb-0">
-                ${obj.to.date}
+                ${weekday[toUnix.getDay()-1]} ${obj.to.date}
               </p>
             </div>
             <div class="w-100 d-block d-lg-none mx-3 border-top"></div>
