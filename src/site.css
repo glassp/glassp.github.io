@@ -16,13 +16,15 @@ html, body{
   max-width:20vw;
 }
 /* Style all font awesome icons */
-.fa, .fa:link, .fa:hover {
-  color: white;
+.fab, .fab:link, .fab:hover, .fas, .fas:link, .fas:hover{
   font-size: 7.5vh;
   width: 7.5vw;
   min-width: 61px;
   text-align: center;
   text-decoration: none;
+}
+.fab, .fab:link, .fab:hover{
+  color: white;
 }
 .fa-heart, .fa-heart:link .fa-heart:hover {
   font-size: 3vh!important;
