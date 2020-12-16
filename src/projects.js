@@ -37,7 +37,7 @@ $.ajax({
       var repos = result.data.user.repositories.nodes;
       for(var i in repos){
         var repo = repos[i];
-        if(!repo.isFork && !repo.name.includes("examples") && repo.name.includes("mathe"))
+        if(!repo.isFork && !repo.name.includes("examples") && !repo.name.includes("mathe"))
         //inject a html card with the repo info (exclude forked and examples repo)
         $("#projects").append(`
           <div class="card">
